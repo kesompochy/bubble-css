@@ -1,0 +1,41 @@
+:root {
+    --size: 100px;
+}
+
+img.bubble {
+    width: var(--size);
+    height: var(--size);
+    object-fit: cover;
+    box-sizing: border-box;
+
+    animation-name: bubbling;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+.color{
+    width: var(--size);
+    height: var(--size);
+    background: radial-gradient(farthest-side at center,
+                                rgba(255,255,255,1) 0%
+                                ,#eeffee 54%
+                                ,#ddffcc 100%)
+}
+
+
+@keyframes bubbling {
+    0% {
+        filter: blur(0);
+    }
+    /*70% {
+        opacity: 0.6;
+        border-radius: 60%;
+        filter: blur(calc(var(--size)/100)) ; 
+    }*/
+    100% {
+        opacity: 0.5;
+        border-radius: 50%;
+        filter: blur(calc(var(--size)/80)) contrast(150%) sepia(70%);
+    }
+}
